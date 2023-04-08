@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-3-e@p5ei-k3f!#*q*2vum675ms0@@zuz4s4m^+4*&m8@uyu=%^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lerninglog.up.railway.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['learninglog.up.railway.app', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -138,7 +138,7 @@ LOGIN_URL = '/users/login/'
 # import django_heroku
 # django_heroku.settings(locals())
 
-CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['lerninglog.up.railway.app']]
+CSRF_TRUSTED_ORIGINS = ['https://learninglog.up.railway.app']
 
 
 if os.environ.get('DEBUG') == 'TRUE':
