@@ -138,6 +138,9 @@ LOGIN_URL = '/users/login/'
 # import django_heroku
 # django_heroku.settings(locals())
 
+CSRF_TRUSTED_ORIGINS = ['https://'+ os.environ['lerninglog.up.railway.app']]
+
+
 if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True
 if os.environ.get('DEBUG') == 'FALSE':
