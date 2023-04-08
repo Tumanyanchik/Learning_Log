@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-3-e@p5ei-k3f!#*q*2vum675ms0@@zuz4s4m^+4*&m8@uyu=%^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['lerninglog.up.railway.app']
+ALLOWED_HOSTS = ['lerninglog.up.railway.app', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'learning_log.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,3 +137,8 @@ LOGIN_URL = '/users/login/'
 # Heroku settings
 # import django_heroku
 # django_heroku.settings(locals())
+
+if os.environ.get('DEBUG') == 'TRUE':
+    DEBUG = True
+if os.environ.get('DEBUG') == 'FALSE':
+    DEBUG = False
